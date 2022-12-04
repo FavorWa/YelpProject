@@ -33,6 +33,18 @@ function App() {
            <p>Keyword</p>
            <input keyword="keyword"/>
          </label>
+         <label>
+           <p>City</p>
+           <input city="city"/>
+         </label>
+         <label>
+           <p>Radius</p>
+           <input radius="radius"/>
+         </label>
+         <label>
+           <p>Limit</p>
+           <input limit="limit"/>
+         </label>
        </fieldset>
        <button type="submit">Submit</button>
       </form>
