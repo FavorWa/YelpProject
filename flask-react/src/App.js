@@ -8,14 +8,6 @@ import Profile from './components/Profile';
 
 
 function App() {
-  return (
-    <main className = "column">
-      <h1>Auth0 Login</h1>
-      <LoginButton />
-      <LogoutButton />
-      <Profile />
-    </main>
-  );
 
   const [profileData, setProfileData] = useState(null)
 
@@ -38,6 +30,13 @@ function App() {
     })}
   
   return (
+    // <main className = "column">
+    //   <h1>Auth0 Login</h1>
+    //   <LoginButton />
+    //   <LogoutButton />
+    //   <Profile />
+    // </main>
+
     <div className="App">
       <header className="App-header">
       <h1>Fake Yelp</h1>
@@ -70,7 +69,7 @@ function App() {
         }
       </header>
     </div>
-  );
+    );
 }
 
 export default App;
