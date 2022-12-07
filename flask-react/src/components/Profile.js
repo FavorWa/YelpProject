@@ -5,9 +5,14 @@ const Profile = () => {
     const { user, isAuthenticated } = useAuth0();
     
     return (
-        !isAuthenticated && (
+        isAuthenticated && (
             <article className = 'column'>
-                {JSON.stringify(user)}
+                {user?.picture && <img src={user.picture} alt={user?.name} />}
+                <h2>{user?.name}</h2>
+                <u1>
+                    {Object.keys(user).map((objKey, i) => <li key={i}>{objKey}: {user[objKey]
+                    } </li>)}
+                </u1>
             </article>
           
         )
