@@ -1,37 +1,24 @@
-from flask import Flask
+from flask import Flask, request,jsonify
 import requests
 
-api = Flask(__name__)
+app = Flask(__name__)
 
-API_KEY = "nRmQg_NkjRoD-yHp9ojddeo1_rsB2orb--GVMrXU5XdvFBEViAJnsGg_7wrmm2NUWHsIJrRP4915ugzta1177-fZudWwG1V0NdQNoNcBL5Nn4rSLlxeWvHUVt0FsY3Yx"
-ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
-HEADERS = {'Authorization': 'bearer %s' %API_KEY}
+@app.route('/', methods=["POST"])
+def search_yelp():
+  # Get the user's input from the request parameters
+  location = request.json.get("location")
+  term = request.json.get("term")
 
-keyword = requests.get('code/frontend/src/App.js/')
-PARAMETERS = {
-    'term': keyword,
-    'limit': 50,
-    'radius': 100,
-    'location': 'Boston'
-}
-response = requests.get(url = ENDPOINT,
-                        params = PARAMETERS,
-                        headers = HEADERS
-                        )
-business_data = response.json()
+  # Use the requests library to make a request to the Yelp API
+  yelp_api_key = "8-K6C2zdxaYZ-SOxTCXSZtSXiQs2DkamO_aNjOcAvwJQan0rtCK7cJDZIkjUFtPizTKHlsz9ojSpWxh5aF3Ys0B51JtY0Q8hzzaPp0oJfTu21axXhTrvVawoYcl3Y3Yx"    
+  headers = {'Authorization': f'Bearer {yelp_api_key}'}
+  params = { 'term':term ,'location':location}
+  response = requests.get('https://api.yelp.com/v3/businesses/search', headers=headers, params=params)
 
-f = open('.\\apis\\yelp_results,txt', 'w')
-f.write(json.dumps(business_data, indent = 3))
-f.close 
+  # Return the response from the Yelp API as a JSON object
+  return jsonify(response.json())
 
-@api.route('/profile')
-def my_profile():
-    response_body = {
-        "name": "Nagato",
-        "about" :"Hello! I'm a full stack developer that loves python and javascript"
-    }
-    return response_body
+if __name__ == '__main__':
+  app.run()
 
-@api.route('/results', methods = ["POST"])
-def get_result():
-    
+
