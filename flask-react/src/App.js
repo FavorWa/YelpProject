@@ -70,6 +70,18 @@ function YelpSearch() {
           <input type="text" name="term" value={term} onChange={handleInputChange} />
         </label>
         <button type="submit">Search</button>
+    .then((response) => {
+      const res =response.data
+      setProfileData(({
+        profile_name: res.name,
+        about_me: res.about}))
+    }).catch((error) => {
+      if (error.response) {
+        console.log(error.response)
+        console.log(error.response.status)
+        console.log(error.response.headers)
+        }
+    })}
       </form>
       {response &&
         <div>
