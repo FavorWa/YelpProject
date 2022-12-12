@@ -19,6 +19,7 @@ const Profile = () => {
 }
 
 export default Profile
+<<<<<<< Updated upstream
 
 
 
@@ -46,3 +47,5 @@ export default Profile
 // }
 
 // export default Profile
+=======
+>>>>>>> Stashed changes

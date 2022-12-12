@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import LoginButton from './components/LoginButton';
+<<<<<<< Updated upstream
 import { useState } from 'react'
 import axios from "axios";
 import LogoutButton from './components/LogoutButton';
@@ -24,6 +25,31 @@ function App() {
     }
   }
 
+=======
+import LogoutButton from './components/LogoutButton';
+import { useState } from 'react'
+import axios from "axios";
+import Profile from './components/Profile';
+
+
+
+function YelpSearch() {
+  // Set up state variables to store the user's input and the response from the Yelp API
+  const [location, setLocation] = useState('');
+  const [term, setTerm] = useState('');
+  const [response, setResponse] = useState(null);
+
+  // Define a function to handle the user's input
+  function handleInputChange(event) {
+    // Update the state variables with the user's input
+    if (event.target.name === 'location') {
+      setLocation(event.target.value);
+    } else if (event.target.name === 'term') {
+      setTerm(event.target.value);
+    }
+  }
+
+>>>>>>> Stashed changes
   // Define a function to handle the form submission
   function handleSubmit(event) {
     // Prevent the default form submission behavior
@@ -48,6 +74,7 @@ function App() {
     });
   }
 
+<<<<<<< Updated upstream
   return (
     <div className="App">
       <>
@@ -56,6 +83,18 @@ function App() {
       <Profile /> 
      </>
       <header className="App-header">
+=======
+
+  // Render the form and the response from the Yelp API (if any)
+  return(
+    <div className='App'>
+    <>
+       <LoginButton />
+       <LogoutButton />
+       <Profile />
+     </>
+     <header className="App-header">
+>>>>>>> Stashed changes
       <h1>Findit</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -81,9 +120,10 @@ function App() {
       }
       </header>
     </div>
-  );
+    );
 }
 
+<<<<<<< Updated upstream
 export default App;
 
 
@@ -173,3 +213,6 @@ export default App;
 // }
 
 // export default App;
+=======
+export default YelpSearch;
+>>>>>>> Stashed changes

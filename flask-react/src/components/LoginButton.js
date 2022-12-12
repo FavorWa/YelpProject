@@ -15,4 +15,8 @@ const LoginButton = () => {
         )
 }
 
+<<<<<<< Updated upstream
 export default LoginButton 
+=======
+export default LoginButton
+>>>>>>> Stashed changes
