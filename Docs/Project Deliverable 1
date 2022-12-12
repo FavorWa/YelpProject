@@ -1,0 +1,17 @@
+Teammates: Wariboko,Favor; Misra,Arnav,Nath; Vande Moore,Carter,E; David,Matteo,Gilbert, Israel
+
+Idea 1) Our first idea is to create a website like Yelp where activites will be recommended to a user based on their interests. The difference between
+this and Yelp is that users will just input keywords for all of their interests, and the website will come up with the places itself. For APIs, we 
+will use the Google Place API and the Facebook Marketing API to get people's interests and suggest places to them. When user's log in with Facebook,
+there will be some keywords automatically recommended based on the Facebook Marketing API that will look at a user's profile, and then user's can
+manually input more keywords and remove any that they don't want afterword in order to refine their searches. 
+
+
+Idea 2) Our second idea is a spinoff of the BU Sustainability app that would make the app more fun in order to get more people to use the app. 
+We would add in competitions with friends / coworkers / etc. that would resemble a board game, in which each time that you do a certain sustainable
+activity, you will move forward more spaces. The number of spaces you move forward will be determined by how much energy, water, CO2, etc. that you
+saved by doing the activity. This will be a more effective way of getting people to use the app because gamification is proved to increase engagement 
+and interest. We could use a database by storing people's login information, we could use environmental APIs such as the Brighter Planet API to track
+people's carbon footprint for tasks such as driving a car vs walking, shutting off lights, etc. For third party authentication, we could use Duo
+to make sure that it is only BU students and faculty that are using the app. Finally, there will be decoupled architecture because the frontend will
+be the application itself, and the backend will be all of the calculations for the game. 
